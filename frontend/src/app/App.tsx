@@ -7,7 +7,7 @@ import './App.scss';
 function App() {
   return (
     <div className="app-root">
-      <header className="app-header">Header</header>
+      <header className="app-header">サンプルアプリケーション</header>
       <main className="app-body container">
         <AppRoute />
       </main>

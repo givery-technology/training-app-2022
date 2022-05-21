@@ -39,17 +39,13 @@ $ docker-compose up
 
 ### Initial setup
 
-初回起動時にはDatabaseが存在しないためWebサーバへのアクセスがエラーになります。
+初期状態で、DBから値を読み出してHello worldを表示する構成となっていますが、初回起動時にはテーブルが存在しないためWebサーバへのアクセスがエラーになります。
 起動後に以下のスクリプトを実行してテーブルの作成と初期データの投入を行ってください。
 
 ```
 host$ docker-compose exec db sh -c "mysql < /sqlscripts/create.sql"
 host$ docker-compose exec db sh -c "mysql training < /sqlscripts/insert.sql"
 ```
-
-スクリプト実行後は一度`docker-compose down`してupしなおしてください。
-
-(または、`backend/**/*.go`のなにかのファイルに空行を足すなどの修正を加えるだけでも構いません。エラーの原因はbackendサーバがDBとの接続に失敗しているためです。airがファイルの変更を検知してリコンパイル/再起動するのでこれでもエラーが解消します。)
 
 ## How to connect database
 

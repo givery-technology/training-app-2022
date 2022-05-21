@@ -9,6 +9,10 @@ services:
     volumes:
       - ./backend:/go/src/myapp
     command: "air"
+    depends_on:
+      - db
+    environment:
+      TZ: Asia/Tokyo
   frontend:
     image: node:16.14.2
     working_dir: /home/node/myapp
@@ -18,6 +22,8 @@ services:
       - ./frontend:/home/node/myapp
       # - /home/node/myapp/node_modules
     command: "bash -c 'npm i && npm run start'"
+    environment:
+      TZ: Asia/Tokyo
   db:
     build: 
       context: ./docker
@@ -31,3 +37,4 @@ services:
       - '3306:3306'
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_DATABASE=training

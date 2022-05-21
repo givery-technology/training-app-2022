@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"os"
 	"myapp/internal/config"
+	"os"
 )
 
 var DB *gorm.DB
