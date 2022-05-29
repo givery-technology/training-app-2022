@@ -4,9 +4,20 @@ import classnames from 'classnames';
 import './Button.scss';
 
 export type ButtonProps = {
-  color?: 'primary' | 'secondary' | 'light' | 'outline-primary' | 'outline-secondary' | 'outline-light';
-  children: React.ReactNode;
-} & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+  color?:
+    | 'primary'
+    | 'secondary'
+    | 'light'
+    | 'outline-primary'
+    | 'outline-secondary'
+    | 'outline-light'
+    | 'link'
+    | 'danger';
+  children?: React.ReactNode;
+} & DetailedHTMLProps<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>;
 
 export function Button(props: ButtonProps) {
   const { type = 'button', color = 'light', children, ...rest } = props;

@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import { AppRoute } from './AppRoute';
 import { Header } from './Header';
+import { ToastContainer } from './partials';
 import { useAppDispatch, useAppSeletor } from '../shared/hooks';
 import { APIService } from '../shared/services';
 
@@ -29,6 +30,7 @@ function App() {
         </div>
         <div className="app-body">{ready && <AppRoute />}</div>
       </main>
+      <ToastContainer />
     </div>
   );
 }
