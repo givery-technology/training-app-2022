@@ -3,7 +3,10 @@ import classnames from 'classnames';
 
 import './Input.scss';
 
-export type InputProps = {} & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+export type InputProps = {} & DetailedHTMLProps<
+  InputHTMLAttributes<HTMLInputElement>,
+  HTMLInputElement
+>;
 
 export function Input(props: InputProps) {
   const { ...rest } = props;

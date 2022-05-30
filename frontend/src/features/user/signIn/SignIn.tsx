@@ -35,14 +35,27 @@ export function SignIn() {
       <form className="app-signin__form needs-validation" onSubmit={onSubmit}>
         <div>
           <Label htmlFor="username">ユーザー名</Label>
-          <Input id="username" name="username" onChange={onFormChange} required />
+          <Input
+            id="username"
+            name="username"
+            onChange={onFormChange}
+            required
+          />
         </div>
         <div>
           <Label htmlFor="password">パスワード</Label>
-          <Input type="password" id="password" name="password" onChange={onFormChange} required />
+          <Input
+            type="password"
+            id="password"
+            name="password"
+            onChange={onFormChange}
+            required
+          />
         </div>
         <div>
-          {error && <p className="text-danger">ユーザー名またはパスワードが違います</p>}
+          {error && (
+            <p className="text-danger">ユーザー名またはパスワードが違います</p>
+          )}
           <Button color="primary" type="submit">
             サインイン
           </Button>
