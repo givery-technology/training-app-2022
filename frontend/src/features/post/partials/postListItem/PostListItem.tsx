@@ -17,9 +17,7 @@ export function PostListItem(props: PostListItemProps) {
     <div className="app-post-list-item">
       <div className="app-post-list-item__header">
         <h3>
-          <NavLink to={`/posts/${post.id}`} className="text-break">
-            {post.title}
-          </NavLink>
+          <NavLink to={`/posts/${post.id}`}>{post.title}</NavLink>
         </h3>
       </div>
       <div className="app-post-list-item__footer">

@@ -21,7 +21,7 @@ export function PostDetail() {
   return (
     <div className="app-post-detail">
       <header className="app-post-detail__header">
-        <h1 className="text-break">{post?.title}</h1>
+        <h1>{post?.title}</h1>
         <div className="app-post-detail__header-dates">
           <div className="app-post-detail__header-date">
             <span className="app-post-detail__header-date-label">作成日時</span>
@@ -33,7 +33,7 @@ export function PostDetail() {
           </div>
         </div>
       </header>
-      <section className="app-post-detail__body text-break">{post?.body}</section>
+      <section className="app-post-detail__body">{post?.body}</section>
       <footer className="app-post-detail__footer">
         <div className="app-post-detail__footer-user">{post?.user_name}</div>
       </footer>
