@@ -131,7 +131,7 @@ workflows:
           checkout: false
           executor: custom-ecr
           setup-remote-docker: true
-          remote-docker-version: 20.10.12
+          remote-docker-version: 20.10.11
           repo: dena-training-2022-team8-web
           tag: "latest,$(echo $CIRCLE_SHA1 | cut -c 1-8)"
           attach-workspace: true
@@ -144,7 +144,7 @@ workflows:
           checkout: false
           executor: custom-ecr
           setup-remote-docker: true
-          remote-docker-version: 20.10.12
+          remote-docker-version: 20.10.11
           repo: dena-training-2022-team8-db
           tag: "latest,$(echo $CIRCLE_SHA1 | cut -c 1-8)"
           attach-workspace: true
