@@ -123,39 +123,39 @@ workflows:
               only:
                 # - master
                 - ci
-      - build-frontend:
-          requires:
-            - build-backend
+      # - build-frontend:
+      #     requires:
+      #       - build-backend
       - aws-ecr/build-and-push-image:
           name: ecr-push-web
           checkout: false
           executor: custom-ecr
           setup-remote-docker: true
-          remote-docker-version: 18.06.0-ce
+          remote-docker-version: 20.10.14
           repo: dena-training-2022-team8-web
           tag: "latest,$(echo $CIRCLE_SHA1 | cut -c 1-8)"
           attach-workspace: true
           workspace-root: /tmp/output
           path: /tmp/output/web
           requires:
-            - build-frontend
+            - build-backend
       - aws-ecr/build-and-push-image:
           name: ecr-push-db
           checkout: false
           executor: custom-ecr
           setup-remote-docker: true
-          remote-docker-version: 18.06.0-ce
+          remote-docker-version: 20.10.14
           repo: dena-training-2022-team8-db
           tag: "latest,$(echo $CIRCLE_SHA1 | cut -c 1-8)"
           attach-workspace: true
           workspace-root: /tmp/output
           path: /tmp/output/db
           requires:
-            - build-frontend
+            - build-backend
       - deploy-backend:
           requires:
             - ecr-push-web
             - ecr-push-db
-      - deploy-frontend:
-          requires:
-            - build-frontend
+      # - deploy-frontend:
+      #     requires:
+      #       - build-frontend
