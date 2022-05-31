@@ -8,7 +8,8 @@ orbs:
 
 executors:
   custom-ecr:
-    docker: ubuntu-1604:201903-01
+    docker: 
+      - image: ubuntu-1604:201903-01
 
 jobs:
   build-backend:
