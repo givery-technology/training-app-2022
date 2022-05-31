@@ -8,8 +8,9 @@ orbs:
 
 executors:
   custom-ecr:
-    docker: 
-      - image: cimg/go:1.18.1
+    machine:
+      image: ubuntu-2004:current
+    resource_class: medium
 
 jobs:
   build-backend:
@@ -130,8 +131,6 @@ workflows:
           name: ecr-push-web
           checkout: false
           executor: custom-ecr
-          setup-remote-docker: true
-          remote-docker-version: 20.10.2
           repo: dena-training-2022-team8-web
           tag: "latest,$(echo $CIRCLE_SHA1 | cut -c 1-8)"
           attach-workspace: true
@@ -143,8 +142,6 @@ workflows:
           name: ecr-push-db
           checkout: false
           executor: custom-ecr
-          setup-remote-docker: true
-          remote-docker-version: 20.10.2
           repo: dena-training-2022-team8-db
           tag: "latest,$(echo $CIRCLE_SHA1 | cut -c 1-8)"
           attach-workspace: true
