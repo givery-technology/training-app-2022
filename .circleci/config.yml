@@ -138,7 +138,7 @@ workflows:
           workspace-root: /tmp/output
           path: /tmp/output/web
           requires:
-            - build-backend
+            - build-frontend
       - aws-ecr/build-and-push-image:
           name: ecr-push-db
           checkout: false
@@ -151,7 +151,7 @@ workflows:
           workspace-root: /tmp/output
           path: /tmp/output/db
           requires:
-            - build-backend
+            - build-frontend
       - deploy-backend:
           requires:
             - ecr-push-web
