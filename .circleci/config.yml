@@ -105,6 +105,12 @@ jobs:
       - aws-s3/sync:
           from: /tmp/output/frontend/build
           to: 's3://givery-training-2022/team8'
+  dummy:
+    executor: custom-ecr
+    steps:
+      - setup_remote_docker
+      - run:
+          command: docker version
 
 workflows:
   # build:
@@ -123,6 +129,7 @@ workflows:
               only:
                 # - master
                 - ci
+      - dummy
       # - build-frontend:
       #     requires:
       #       - build-backend
