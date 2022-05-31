@@ -1,0 +1,6 @@
+@use '~bootstrap/scss/bootstrap.scss' as *;
+
+.app-c-modal {
+  display: block !important;
+  background-color: transparentize($black, 0.75);
+}
