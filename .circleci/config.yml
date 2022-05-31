@@ -9,7 +9,7 @@ orbs:
 executors:
   custom-ecr:
     machine:
-      image: ubuntu-2004:current
+      image: cimg/go:1.18.1
     resource_class: medium
 
 jobs:
