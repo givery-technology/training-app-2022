@@ -9,7 +9,7 @@ orbs:
 executors:
   custom-ecr:
     machine:
-      image: cimg/go:1.18.1
+      image: cimg/base:2021.07
     resource_class: medium
 
 jobs:
